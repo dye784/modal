@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Damon Ye</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+      body {
+        background-color: red;
+      }
+
+      #modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);  /*Fallback color*/
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+
+      #modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        height: 50%;
+        background-color: rgba(0,0,0, 0.2);
+      }
+
+      /* The Close Button */
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      #open-modal-btn-wrapper {
+        text-align: center;
+      }
+    </style>
+  </head>
+<body>
+  <div id="modal">
+    <div id="modal-content">
+      <span class="close">&times;</span>
+      <h5>ANNOYING POP UP HERE</h5>
+    </div>
+  </div>
+  <div id="open-modal-btn-wrapper">
+    <button id="open-modal-btn">Open Modal</button>
+  </div>
+</body>
+<script type="text/javascript">
+  window.onload = () => {
+    const openModalButton = document.getElementById('open-modal-btn');
+    const closeModalButton = document.getElementsByClassName('close')[0];
+    const modal = document.getElementById('modal');
+
+    openModalButton.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+
+    closeModalButton.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  };
+</script>
